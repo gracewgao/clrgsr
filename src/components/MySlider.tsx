@@ -5,22 +5,14 @@ import { BooleanLiteral, createSemanticDiagnosticsBuilderProgram } from 'typescr
 interface IMySlider {
   isActive: boolean;
   sliderValue: number;
-  setSliderValue: (value: number) => void;
 }
 
 export const SLIDER_MAX = 255;
 
-export const MySlider: React.FC<IMySlider> = ({ isActive, sliderValue, setSliderValue }) => {
+export const MySlider: React.FC<IMySlider> = ({ isActive, sliderValue }) => {
   return (
     <input
       type='range'
-      //   onChange={(_, value) => {
-      //     if (typeof value === 'number') {
-      //       setSliderValue(value);
-      //     } else {
-      //       setSliderValue(value[0]);
-      //     }
-      //   }}
       value={sliderValue}
       max={SLIDER_MAX}
       disabled={!isActive}
